@@ -1,0 +1,11 @@
+{
+  "name": "1plus1",
+  "description": "Tool for pairing up people every week",
+  "version": "0.1.0",
+  "author": "Ian Macalinao <me@ian.pw>",
+  "dependencies": {
+    "express": "^4.10.2",
+    "mongoose": "^3.8.19",
+    "preston": "^0.2.2"
+  }
+}
