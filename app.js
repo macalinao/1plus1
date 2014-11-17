@@ -1,4 +1,7 @@
 var express = require('express');
-var mongoose = require('mongoose');
-var preston = require('preston');
+var app = express();
+app.use(express.static(__dirname + '/public'));
+app.listen(3000, function() {
+  console.log('Listening on *:3000');
+});
 
