@@ -17,10 +17,7 @@ angular.module('1plus1', [])
       return;
     }
 
-    $scope.teams.push({
-      name: $scope.newTeam.name,
-      members: $scope.newTeam.members
-    });
+    $scope.teams.push(_.clone($scope.newTeam));
     $scope.newTeam = {
       members: []
     };
@@ -38,6 +35,15 @@ angular.module('1plus1', [])
 
   $scope.getNumber = function(num) {
     return new Array(num);
-  }
+  };
+
+  $scope.pairings = [
+    [{a: 'a@b.com', b:'b@a.com'}]
+  ];
+
+  $scope.nextPairing = function() {
+    var teams = $scope.teams;
+    var pairings = $scope.pairings;
+  };
 
 });

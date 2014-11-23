@@ -4,6 +4,14 @@
   "version": "0.1.0",
   "author": "Ian Macalinao <me@ian.pw>",
   "dependencies": {
-    "express": "^4.10.2"
+    "express": "^4.10.2",
+    "lodash": "^2.4.1"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha -R spec"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1"
   }
 }
