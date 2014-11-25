@@ -73,7 +73,6 @@ angular.module('1plus1', ['restangular'])
   $scope.resetPairings = function() {
     $http.post('/reset_pairings').then(function() {
       $scope.pairings = [];
-      $scope.$apply();
     });
   };
 

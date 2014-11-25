@@ -68,6 +68,7 @@ app.post('/pair', function(req, res) {
 
 app.post('/reset_pairings', function(req, res) {
   redis.del('lastpairs');
+  res.send('OK');
 });
 
 var port = process.env.PORT || 3000;
