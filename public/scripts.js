@@ -7,44 +7,6 @@ angular.module('1plus1', ['restangular'])
 
   var Team = Restangular.all('api/teams');
 
-  /*
-  $scope.teams = [{
-    name: 'The Beatles',
-    members: [
-      'paul@mccartney.org',
-      'john@lennon.org',
-      'george@harrison.org',
-      'ringo@starr.org'
-    ]
-  }, {
-    name: 'The Quarrymen',
-    members: [
-      'john@lennon.org',
-      'paul@mccartney.org',
-      'stu@stucliffe.org'
-    ]
-  }, {
-    name: 'Wings',
-    members: [
-      'paul@mccartney.org',
-      'linda@mccartney.org'
-    ]
-  }, {
-    name: 'Plastic Ono Band',
-    members: [
-      'john@lennon.org',
-      'yoko@ono.org'
-    ]
-  }, {
-    name: 'Traveling Wilburys',
-    members: [
-      'george@harrison.org',
-      'tom@petty.org',
-      'roy@orbison.org'
-    ]
-  }];
-  */
-
   $scope.teams = Team.getList().$object;
 
   $scope.createNewTeam = function() {
