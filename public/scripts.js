@@ -48,6 +48,9 @@ angular.module('1plus1', ['restangular'])
   };
 
   $scope.pairings = [];
+  $http.get('/lastpairs').then(function(res) {
+    $scope.pairings = res.data || [];
+  });
 
   $scope.nextPairing = function(times) {
     var teams = $scope.teams;
@@ -65,6 +68,13 @@ angular.module('1plus1', ['restangular'])
 
   $scope.deleteTeam = function(i) {
     $scope.teams.splice(i, 1)[0].remove();
+  };
+
+  $scope.resetPairings = function() {
+    $http.post('/reset_pairings').then(function() {
+      $scope.pairings = [];
+      $scope.$apply();
+    });
   };
 
 });

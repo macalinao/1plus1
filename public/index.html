@@ -71,6 +71,7 @@
         <button class="btn btn-primary" ng-click="nextPairing(1)">Next Pairing</button>
         <button class="btn btn-success" ng-click="nextPairing(5)">Next 5 Pairings</button>
         <button class="btn btn-warning" ng-click="nextPairing(10)">Next 10 Pairings</button>
+        <button class="btn btn-danger" ng-click="resetPairings()">Reset Pairings</button>
 
         <div ng-repeat="pairing in pairings.slice().reverse()">
           <h2>Week {{pairings.length - $index}}</h2>
