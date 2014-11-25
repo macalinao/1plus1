@@ -12,7 +12,8 @@ app.post('/pair', function(req, res) {
   res.json(pairs);
 });
 
-app.listen(3000, function() {
-  console.log('Listening on *:3000');
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
+  console.log('Listening on *:' + port);
 });
 
