@@ -66,12 +66,13 @@
 
       <div class="col-md-6">
         <h1>Pairings</h1>
+        <button class="btn btn-primary" ng-click="nextPairing()">Next Pairing</button>
 
         <div ng-repeat="pairing in pairings">
           <h2>Week {{$index + 1}}</h2>
           <ul>
             <li ng-repeat="pair in pairing">
-              {{pair[0]}} and {{pair[1]}}
+              {{pair.join(', ')}}
             </li>
           </ul>
         </div>

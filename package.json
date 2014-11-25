@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "author": "Ian Macalinao <me@ian.pw>",
   "dependencies": {
+    "body-parser": "^1.9.3",
     "express": "^4.10.2",
     "lodash": "^2.4.1"
   },
