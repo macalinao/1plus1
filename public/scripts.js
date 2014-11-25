@@ -1,10 +1,13 @@
-angular.module('1plus1', [])
+angular.module('1plus1', ['restangular'])
 
-.controller('MainCtrl', function($scope, $http) {
+.controller('MainCtrl', function($scope, $http, Restangular) {
   $scope.newTeam = {
     members: []
   };
 
+  var Team = Restangular.all('api/teams');
+
+  /*
   $scope.teams = [{
     name: 'The Beatles',
     members: [
@@ -40,6 +43,9 @@ angular.module('1plus1', [])
       'roy@orbison.org'
     ]
   }];
+  */
+
+  $scope.teams = Team.getList().$object;
 
   $scope.createNewTeam = function() {
     if (!$scope.newTeam.name) {
@@ -52,15 +58,18 @@ angular.module('1plus1', [])
       return;
     }
 
-    $scope.teams.push(_.clone($scope.newTeam));
+    var newTeam = _.clone($scope.newTeam);
     $scope.newTeam = {
       members: []
     };
+    Team.post(newTeam).then(function(data) {
+      $scope.teams.push(data);
+    });
   };
 
   $scope.addMember = function() {
-    var member = $scope.newTeam.newMember;
-    $scope.newTeam.newMember = '';
+    var member = $scope.newMember;
+    $scope.newMember = '';
     if ($scope.newTeam.members.indexOf(member) !== -1) {
       alert('Already a member');
       return;
@@ -93,7 +102,7 @@ angular.module('1plus1', [])
   };
 
   $scope.deleteTeam = function(i) {
-    $scope.teams.splice(i, 1);
+    $scope.teams.splice(i, 1)[0].remove();
   };
 
 });
