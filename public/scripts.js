@@ -90,4 +90,8 @@ angular.module('1plus1', [])
     });
   };
 
+  $scope.deleteTeam = function(i) {
+    $scope.teams.splice(i, 1);
+  };
+
 });

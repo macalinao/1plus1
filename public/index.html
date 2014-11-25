@@ -55,6 +55,7 @@
         <h1>Teams</h1>
         <div ng-repeat="team in teams">
           <h2>{{team.name}}</h2>
+          <button class="btn btn-danger" ng-click="deleteTeam($index)">Delete</button>
           <h3>Members</h3>
           <ul>
             <li ng-repeat="member in team.members">{{member}}</li>
