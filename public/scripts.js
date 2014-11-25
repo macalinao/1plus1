@@ -68,6 +68,10 @@ angular.module('1plus1', [])
     $scope.newTeam.members.push(member);
   };
 
+  $scope.deleteNewMember = function(i) {
+    $scope.newTeam.members.splice(i, 1);
+  };
+
   $scope.getNumber = function(num) {
     return new Array(num);
   };

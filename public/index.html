@@ -32,9 +32,9 @@
           <div class="form-group">
             <label>Team Members</label>
 
-            <div ng-repeat="member in newTeam.members">
-              <p>{{member}}</p>
-            </div>
+            <ul ng-repeat="member in newTeam.members">
+              <li>{{member}} <button class="btn btn-danger" ng-click="deleteNewMember($index)">Delete</button></li>
+            </ul>
 
             <div class="row">
               <div class="col-xs-9">
