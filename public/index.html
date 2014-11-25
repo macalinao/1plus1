@@ -9,6 +9,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.compat.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/restangular/1.4.0/restangular.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <script src="scripts.js"></script>
 
@@ -67,7 +68,9 @@
 
       <div class="col-md-6">
         <h1>Pairings</h1>
-        <button class="btn btn-primary" ng-click="nextPairing()">Next Pairing</button>
+        <button class="btn btn-primary" ng-click="nextPairing(1)">Next Pairing</button>
+        <button class="btn btn-success" ng-click="nextPairing(5)">Next 5 Pairings</button>
+        <button class="btn btn-warning" ng-click="nextPairing(10)">Next 10 Pairings</button>
 
         <div ng-repeat="pairing in pairings.slice().reverse()">
           <h2>Week {{pairings.length - $index}}</h2>

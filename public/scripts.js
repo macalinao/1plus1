@@ -78,15 +78,17 @@ angular.module('1plus1', [])
 
   $scope.pairings = [];
 
-  $scope.nextPairing = function() {
+  $scope.nextPairing = function(times) {
     var teams = $scope.teams;
     var pairings = $scope.pairings;
 
     $http.post('/pair', {
       teams: teams,
-      pairings: pairings
+      pairings: pairings,
+      times: times
     }).then(function(res) {
-      pairings.push(res.data);
+      var newPairs = res.data;
+      $scope.pairings = pairings.concat(newPairs);
     });
   };
 
